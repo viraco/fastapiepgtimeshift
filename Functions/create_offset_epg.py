@@ -1,11 +1,8 @@
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 import copy
-import json
-
-with open('offset_config.json', 'r') as f:
-    epg_offset_config = json.load(f)
-print(epg_offset_config)
+import os
+from Functions.config import get_epg_offset_config
 
 
 def parse_xmltv_datetime(dt_str):
@@ -34,12 +31,17 @@ def apply_displayname_updates(element, update_displayname_rules):
                 display_name.text = display_name.text.replace(rule['find'], rule['replace'])
 
 
-def create_combined_offset_epg_v2(epg_offset_config, output_file='offset_epg.xml'):
+def create_combined_offset_epg_v2(epg_offset_config, base_dir=None):
     from collections import defaultdict
+
+    if base_dir is None:
+        base_dir = os.path.join(os.path.dirname(__file__), '..', 'Data')
 
     # Group configs by epg_file
     file_to_configs = defaultdict(list)
     for entry in epg_offset_config:
+        file_path = os.path.join(base_dir, entry['epg_file'])
+
         file_to_configs[entry['epg_file']].append(entry)
 
     channel_elements = []
@@ -64,7 +66,7 @@ def create_combined_offset_epg_v2(epg_offset_config, output_file='offset_epg.xml
                 cfg = config_map[ch_id]
                 new_channel = copy.deepcopy(channel)
                 new_channel.set('id', cfg['new_channelid'])
-                rules = cfg.get('update_displayname', cfg.get('Update displayname', []))
+                rules = cfg.get('update_displayname', [])
                 if rules:
                     apply_displayname_updates(new_channel, rules)
                 channel_elements.append(new_channel)
@@ -93,6 +95,8 @@ def create_combined_offset_epg_v2(epg_offset_config, output_file='offset_epg.xml
     ET.indent(new_root, space='  ')
     new_tree = ET.ElementTree(new_root)
 
+    output_file = os.path.join(base_dir, 'offset_epg.xml')
+
     with open(output_file, 'wb') as f:
         f.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
         new_tree.write(f, encoding='utf-8', xml_declaration=False)
@@ -101,4 +105,6 @@ def create_combined_offset_epg_v2(epg_offset_config, output_file='offset_epg.xml
     print(f"Channels: {len(channel_elements)}, Programmes: {len(programme_elements)}")
 
 
-create_combined_offset_epg_v2(epg_offset_config, output_file='offset_epg.xml')
+if __name__ == "__main__":
+    epg_offset_config = get_epg_offset_config(base_dir=None)
+    create_combined_offset_epg_v2(epg_offset_config, base_dir=None)

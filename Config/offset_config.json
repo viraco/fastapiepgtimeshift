@@ -1,0 +1,98 @@
+[
+  {
+    "channelid": "2271.stations.xmltv.tvmedia.ca",
+    "offset_minutes": "180",
+    "new_channelid": "2271.stations.xmltv.tvmedia.ca.offset180",
+    "update_displayname": [
+      {
+        "find": "Showtime Showcase - Eastern",
+        "replace": "Showtime Showcase - Pacific"
+      },
+      {
+        "find": "SHO3",
+        "replace": "SHO3P"
+      }
+    ],
+    "epg_file": "xmltv-10382.xml"
+  },
+  {
+    "channelid": "2272.stations.xmltv.tvmedia.ca",
+    "offset_minutes": "180",
+    "new_channelid": "2272.stations.xmltv.tvmedia.ca.offset180",
+    "update_displayname": [
+      {
+        "find": "Showtime Next - Eastern",
+        "replace": "Showtime Next - Pacific"
+      },
+      {
+        "find": "NEXT",
+        "replace": "NEXTP"
+      }
+    ],
+    "epg_file": "xmltv-10369.xml"
+  },
+  {
+    "channelid": "1956.stations.xmltv.tvmedia.ca",
+    "offset_minutes": "180",
+    "new_channelid": "1956.stations.xmltv.tvmedia.ca.offset180",
+    "update_displayname": [
+      {
+        "find": "Showtime Family Zone - Eastern",
+        "replace": "Showtime Family Zone - Pacific"
+      },
+      {
+        "find": "SHOFZ",
+        "replace": "SHOFZP"
+      }
+    ],
+    "epg_file": "xmltv-10369.xml"
+  },
+  {
+    "channelid": "2273.stations.xmltv.tvmedia.ca",
+    "offset_minutes": "180",
+    "new_channelid": "2273.stations.xmltv.tvmedia.ca.offset180",
+    "update_displayname": [
+      {
+        "find": "Showtime Women - Eastern",
+        "replace": "Showtime Women - Pacific"
+      },
+      {
+        "find": "SHO-WE",
+        "replace": "SHO-WEP"
+      }
+    ],
+    "epg_file": "xmltv-10369.xml"
+  },
+  {
+    "channelid": "4223.stations.xmltv.tvmedia.ca",
+    "offset_minutes": "180",
+    "new_channelid": "4223.stations.xmltv.tvmedia.ca.offset180",
+    "update_displayname": [
+      {
+        "find": "Starz Comedy - Eastern",
+        "replace": "Starz Comedy - Pacific"
+      },
+      {
+        "find": "SRZC",
+        "replace": "SRZCP"
+      }
+    ],
+    "epg_file": "xmltv-10369.xml"
+  },
+  {
+    "channelid": "1194.stations.xmltv.tvmedia.ca",
+    "offset_minutes": "180",
+    "new_channelid": "1194.stations.xmltv.tvmedia.ca.offset180",
+    "update_displayname": [
+      {
+        "find": "Starz Kids &amp; Family - Eastern",
+        "replace": "Starz Kids &amp; Family - Pacific"
+      },
+      {
+        "find": "SRZK",
+        "replace": "SRZKP"
+      }
+    ],
+    "epg_file": "xmltv-10369.xml"
+  }
+]

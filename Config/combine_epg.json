@@ -1,0 +1,61 @@
+[
+  {
+    "epg_file": "offset_epg.xml",
+    "channels": [
+      {
+        "channelid": "2272.stations.xmltv.tvmedia.ca.offset180",
+        "update_displayname": [
+          {
+            "find": "447",
+            "replace": "444.2"
+          }
+        ]
+      },
+      {
+        "channelid": "2271.stations.xmltv.tvmedia.ca.offset180",
+        "update_displayname": [
+          {
+            "find": "323",
+            "replace": "441"
+          }
+        ]
+      },
+      {
+        "channelid": "1956.stations.xmltv.tvmedia.ca.offset180",
+        "update_displayname": [
+          {
+            "find": "449",
+            "replace": "445.2"
+          }
+        ]
+      },
+      {
+        "channelid": "2273.stations.xmltv.tvmedia.ca.offset180",
+        "update_displayname": [
+          {
+            "find": "451",
+            "replace": "446.2"
+          }
+        ]
+      },
+      {
+        "channelid": "4223.stations.xmltv.tvmedia.ca.offset180",
+        "update_displayname": [
+          {
+            "find": "469",
+            "replace": "467.2"
+          }
+        ]
+      },
+      {
+        "channelid": "1194.stations.xmltv.tvmedia.ca.offset180",
+        "update_displayname": [
+          {
+            "find": "475",
+            "replace": "470.2"
+          }
+        ]
+      }
+    ]
+  }
+]
