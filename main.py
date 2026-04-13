@@ -50,4 +50,4 @@ def download_epg_files_cron():
     create_combined_offset_epg_v2(epg_offset_config, base_dir=data_dir)
 
 
-scheduler = start_scheduler()
+scheduler = start_scheduler(download_epg_files_cron)
