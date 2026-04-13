@@ -6,7 +6,6 @@ from Functions.create_offset_epg import create_combined_offset_epg_v2
 from Functions.cron_schedule import start_scheduler
 from Functions.config import get_epg_offset_config
 from Functions.download_epg_files import download_epg_files
-import time
 
 base_dir = os.path.dirname(__file__)
 config_dir = os.path.join(base_dir, 'Config')
@@ -44,6 +43,7 @@ async def download_epg_files():
     with open(epg_file_path, 'rb') as f:
         content = f.read()
     return Response(content=content, media_type='application/xml')
+
 
 def download_epg_files_cron():
     download_epg_files(base_dir=data_dir)

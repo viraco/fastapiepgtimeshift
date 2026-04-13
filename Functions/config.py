@@ -1,11 +1,14 @@
 import os
+
 from dotenv import load_dotenv
 import json
+
 
 def load_config():
     """Load configuration from config.env file"""
     config_path = os.path.join(os.path.dirname(__file__), '..', 'Config', 'config.env')
     load_dotenv(config_path, override=True)
+
 
 def get_epg_offset_config(base_dir=None):
     file_name = 'offset_config.json'
