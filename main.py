@@ -5,7 +5,7 @@ from fastapi.responses import Response
 from Functions.create_offset_epg import create_combined_offset_epg_v2
 from Functions.cron_schedule import start_scheduler
 from Functions.config import get_epg_offset_config
-from Functions.download_epg_files import download_epg_files
+from Functions.download_epg import download_epg_files
 
 base_dir = os.path.dirname(__file__)
 config_dir = os.path.join(base_dir, 'Config')
@@ -36,7 +36,7 @@ async def create_epg():
 
 
 @app.get("/offset_epg.xml")
-async def download_epg_files():
+async def download_epg_offset():
     epg_file_path = os.path.join(data_dir, 'offset_epg.xml')
     if not os.path.exists(epg_file_path):
         return {"error": "EPG file not found"}
