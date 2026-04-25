@@ -10,7 +10,7 @@ from Functions.download_epg import download_epg_files
 base_dir = os.path.dirname(__file__)
 config_dir = os.path.join(base_dir, 'Config')
 data_dir = os.path.join(base_dir, 'Data')
-epg_offset_config = get_epg_offset_config(base_dir=config_dir)
+epg_offset_config = get_epg_offset_config(config_dir)
 
 print(f"BASE DIR:{base_dir}",
       f"CONFIG DIR:{config_dir}",
@@ -31,7 +31,7 @@ async def say_hello(name: str):
 
 @app.get("/create_epg")
 async def create_epg():
-    create_combined_offset_epg_v2(epg_offset_config, base_dir=data_dir)
+    create_combined_offset_epg_v2(epg_offset_config, data_dir)
     return {"message": "EPG created successfully"}
 
 
@@ -46,8 +46,8 @@ async def download_epg_offset():
 
 
 def download_epg_files_cron():
-    download_epg_files(base_dir=data_dir)
-    create_combined_offset_epg_v2(epg_offset_config, base_dir=data_dir)
+    download_epg_files(data_dir)
+    create_combined_offset_epg_v2(epg_offset_config, data_dir)
 
 
 scheduler = start_scheduler(download_epg_files_cron)

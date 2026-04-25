@@ -2,7 +2,8 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 import copy
 import os
-from Functions.config import get_epg_offset_config
+from collections import defaultdict
+from Functions.config import get_epg_combine_config
 
 
 def parse_xmltv_datetime(dt_str):
@@ -31,15 +32,13 @@ def apply_displayname_updates(element, update_displayname_rules):
                 display_name.text = display_name.text.replace(rule['find'], rule['replace'])
 
 
-def create_combined_offset_epg_v2(epg_offset_config, data_dir=None):
-    from collections import defaultdict
-
+def create_combined_epg(epg_combine_config, data_dir=None):
     if data_dir is None:
         data_dir = os.path.join(os.path.dirname(__file__), '..', 'Data')
 
     # Group configs by epg_file
     file_to_configs = defaultdict(list)
-    for entry in epg_offset_config:
+    for entry in epg_combine_config:
         file_path = os.path.normpath(os.path.join(data_dir, entry['epg_file']))
         file_to_configs[file_path].append(entry)
 
@@ -58,15 +57,17 @@ def create_combined_offset_epg_v2(epg_offset_config, data_dir=None):
                 new_root.set(attr, val)
             root_attrs_set = True
 
-        config_map = {cfg['channelid']: cfg for cfg in configs}
+        config_map = {}
+        for cfg in configs:
+            for ch_cfg in cfg.get('channels', []):
+                config_map[ch_cfg['channelid']] = {'parent_cfg': cfg, 'channel_cfg': ch_cfg}
 
         for channel in root.findall('channel'):
             ch_id = channel.get('id')
             if ch_id in config_map:
-                cfg = config_map[ch_id]
+                ch_cfg = config_map[ch_id]['channel_cfg']
                 new_channel = copy.deepcopy(channel)
-                new_channel.set('id', cfg['new_channelid'])
-                rules = cfg.get('update_displayname', [])
+                rules = ch_cfg.get('update_displayname', [])
                 if rules:
                     apply_displayname_updates(new_channel, rules)
                 channel_elements.append(new_channel)
@@ -74,17 +75,7 @@ def create_combined_offset_epg_v2(epg_offset_config, data_dir=None):
         for programme in root.findall('programme'):
             ch_id = programme.get('channel')
             if ch_id in config_map:
-                cfg = config_map[ch_id]
-                offset_minutes = int(cfg['offset_minutes'])
                 new_prog = copy.deepcopy(programme)
-
-                start_dt, _, tz_str = parse_xmltv_datetime(programme.get('start'))
-                new_prog.set('start', format_xmltv_datetime(start_dt + timedelta(minutes=offset_minutes), tz_str))
-
-                stop_dt, _, tz_str_stop = parse_xmltv_datetime(programme.get('stop'))
-                new_prog.set('stop', format_xmltv_datetime(stop_dt + timedelta(minutes=offset_minutes), tz_str_stop))
-
-                new_prog.set('channel', cfg['new_channelid'])
                 programme_elements.append(new_prog)
 
     for ch in channel_elements:
@@ -95,16 +86,16 @@ def create_combined_offset_epg_v2(epg_offset_config, data_dir=None):
     ET.indent(new_root, space='  ')
     new_tree = ET.ElementTree(new_root)
 
-    output_file = os.path.join(data_dir, 'offset_epg.xml')
+    output_file = os.path.join(data_dir, 'combined_epg.xml')
 
     with open(output_file, 'wb') as f:
         f.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
         new_tree.write(f, encoding='utf-8', xml_declaration=False)
 
-    print(f"Offset EPG written to: {output_file}")
+    print(f"Combined EPG written to: {output_file}")
     print(f"Channels: {len(channel_elements)}, Programmes: {len(programme_elements)}")
 
 
 if __name__ == "__main__":
-    epg_offset_config = get_epg_offset_config(base_dir=None)
-    create_combined_offset_epg_v2(epg_offset_config, data_dir=None)
+    epg_combine_config = get_epg_combine_config(base_dir=None)
+    create_combined_epg(epg_combine_config, data_dir=None)

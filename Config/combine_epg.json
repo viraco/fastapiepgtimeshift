@@ -57,5 +57,620 @@
         ]
       }
     ]
+  },
+  {
+    "epg_file": "epg_ripper_US2.xml",
+    "channels": [
+      {
+        "channelid": "WPTD-DT.us_locals1"
+      },
+      {
+        "channelid": "ION.Television.HD.us2"
+      },
+      {
+        "channelid": "CSPAN3.us2"
+      },
+      {
+        "channelid": "QVC3.us2"
+      },
+      {
+        "channelid": "Cleo.TV.HD.us2"
+      },
+      {
+        "channelid": "Law.and.Crime.us2"
+      },
+      {
+        "channelid": "Shop.LC.us2"
+      },
+      {
+        "channelid": "Game+.Game.Plus.HD.us2"
+      },
+      {
+        "channelid": "Grit.us2"
+      },
+      {
+        "channelid": "EarthX.us2"
+      },
+      {
+        "channelid": "Antenna.TV.us2"
+      },
+      {
+        "channelid": "Bounce.TV.us2"
+      },
+      {
+        "channelid": "CHARGE!.us2"
+      },
+      {
+        "channelid": "ROAR.TV.us2"
+      },
+      {
+        "channelid": "Heroes.and.Icons.Network.SD.us2"
+      },
+      {
+        "channelid": "Court.TV.us2"
+      },
+      {
+        "channelid": "Story.us2"
+      },
+      {
+        "channelid": "Catchy.Comedy.us2"
+      },
+      {
+        "channelid": "COZI.TV.us2"
+      },
+      {
+        "channelid": "get.us2"
+      },
+      {
+        "channelid": "Quest.us2"
+      },
+      {
+        "channelid": "Start.TV.Network.us2"
+      }
+    ]
+  },
+  {
+    "epg_file": "epg_ripper_US_LOCALS1.xml",
+    "channels": [
+      {
+        "channelid": "WPTD-DT.us_locals1"
+      }
+    ]
+  },
+  {
+    "epg_file": "xmltv-10369.xml",
+    "channels": [
+      {
+        "channelid": "3000.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1370.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "14985.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1362.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "13100.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "5268.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1365.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "10165.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1376.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1366.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "4855.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "14683.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "3770.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1119.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "668.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "193.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1089.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "594.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "650.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1527.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "621.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "649.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "177.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "176.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "652.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "596.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "333.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "347.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "61.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "640.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "657.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "645.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "661.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1011.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "4225.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "595.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "6867.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "654.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "659.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1159.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1052.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "646.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "5005.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "617.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "662.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "623.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "622.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1054.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "4226.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "655.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "201.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1083.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "70.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "425.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "648.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1050.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1856.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "4656.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "615.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "527.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "647.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1952.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1051.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "329.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1308.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "4453.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1333.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2707.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "13442.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "664.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "16175.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "658.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1969.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2010.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1954.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "3331.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "13711.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "6178.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "3349.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "6921.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "10321.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "14156.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1086.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "14986.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1273.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "13495.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "17222.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "5077.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "13473.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "620.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1960.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2074.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2090.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2035.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "624.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1971.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "7537.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1053.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2268.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "614.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1472.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "626.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1651.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2580.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "629.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "632.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1215.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "634.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2581.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1377.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1387.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2596.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2077.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1615.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2584.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2272.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2273.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "583.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1217.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2120.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2678.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "4223.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1957.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2681.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1194.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "667.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1218.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1959.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2085.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2080.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2081.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1958.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "4206.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2078.stations.xmltv.tvmedia.ca"
+      }
+    ]
+  },
+  {
+    "epg_file": "xmltv-10382.xml",
+    "channels": [
+      {
+        "channelid": "10501.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1082.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "1848.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "32480.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2673.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "33964.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "4499.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2269.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "16158.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2114.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2143.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2075.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "20169.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "14622.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "36900.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "16325.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2205.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2271.stations.xmltv.tvmedia.ca"
+      }
+    ]
+  },
+  {
+    "epg_file": "xmltv-8940.xml",
+    "channels": [
+      {
+        "channelid": "11301.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "8823.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "6610.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "13463.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "6826.stations.xmltv.tvmedia.ca"
+      }
+    ]
+  },
+  {
+    "epg_file": "xmltv-9667.xml",
+    "channels": [
+      {
+        "channelid": "1966.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2593.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "630.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2594.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2582.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "636.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "635.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "10734.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2680.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2128.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "7609.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "11485.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "11616.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "11487.stations.xmltv.tvmedia.ca"
+      }
+    ]
   }
 ]

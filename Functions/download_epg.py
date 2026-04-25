@@ -11,7 +11,7 @@ def download_file(url, file_path):
     file_name = os.path.split(file_path)[-1]
     try:
         print(f"Downloading file {file_name}...")
-        response = requests.get(url, timeout=30)
+        response = requests.get(url, timeout=300)
         response.raise_for_status()
 
         # Ensure directory exists
