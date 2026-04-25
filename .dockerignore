@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+Config/config.env
+Data/*.xml
+!Data/.gitkeep
+.git/
+.gitignore
+.python-version
