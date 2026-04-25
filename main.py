@@ -36,10 +36,12 @@ async def create_epg_async():
     create_combined_offset_epg_v2(epg_offset_config, data_dir)
     return {"message": "EPG created successfully"}
 
+
 @app.get("/create_combined_epg")
 async def create_combined_epg_async():
     create_combined_epg(epg_combine_config, data_dir)
     return {"message": "Combined EPG created successfully"}
+
 
 @app.get("/offset_epg.xml")
 async def download_epg_offset_async():
@@ -51,9 +53,21 @@ async def download_epg_offset_async():
     return Response(content=content, media_type='application/xml')
 
 
+@app.get("/combined_epg.xml")
+async def download_combined_epg_async():
+    epg_file_path = os.path.join(data_dir, 'combined_epg.xml')
+    if not os.path.exists(epg_file_path):
+        return {"error": "Combined EPG file not found"}
+    with open(epg_file_path, 'rb') as f:
+        content = f.read()
+    return Response(content=content, media_type='application/xml')
+
+
+@app.get("/combined_epg.xml")
 def download_epg_files_cron():
     download_epg_files(data_dir)
     create_combined_offset_epg_v2(epg_offset_config, data_dir)
     create_combined_epg(epg_combine_config, data_dir)
+
 
 scheduler = start_scheduler(download_epg_files_cron)
