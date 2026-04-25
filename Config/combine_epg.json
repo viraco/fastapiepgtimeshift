@@ -3,6 +3,9 @@
     "epg_file": "offset_epg.xml",
     "channels": [
       {
+        "channelid": "630.stations.xmltv.tvmedia.ca.offset180"
+      },
+      {
         "channelid": "2272.stations.xmltv.tvmedia.ca.offset180",
         "update_displayname": [
           {
@@ -140,6 +143,7 @@
   {
     "epg_file": "xmltv-10369.xml",
     "channels": [
+      { "channelid": "1956.stations.xmltv.tvmedia.ca" },
       {
         "channelid": "3000.stations.xmltv.tvmedia.ca"
       },
@@ -629,6 +633,9 @@
   {
     "epg_file": "xmltv-9667.xml",
     "channels": [
+      {
+        "channelid": "665.stations.xmltv.tvmedia.ca"
+      },
       {
         "channelid": "6215.stations.xmltv.tvmedia.ca"
       },

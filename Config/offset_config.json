@@ -16,6 +16,22 @@
     "epg_file": "xmltv-10382.xml"
   },
   {
+    "channelid": "630.stations.xmltv.tvmedia.ca",
+    "offset_minutes": "180",
+    "new_channelid": "630.stations.xmltv.tvmedia.ca.offset180",
+    "update_displayname": [
+      {
+        "find": "HBO Movies - East",
+        "replace": "HBO Movies - Pacific"
+      },
+      {
+        "find": "HBOMOV",
+        "replace": "HBOMOVP"
+      }
+    ],
+    "epg_file": "xmltv-9667.xml"
+  },
+  {
     "channelid": "2272.stations.xmltv.tvmedia.ca",
     "offset_minutes": "180",
     "new_channelid": "2272.stations.xmltv.tvmedia.ca.offset180",
@@ -85,8 +101,8 @@
     "new_channelid": "1194.stations.xmltv.tvmedia.ca.offset180",
     "update_displayname": [
       {
-        "find": "Starz Kids &amp; Family - Eastern",
-        "replace": "Starz Kids &amp; Family - Pacific"
+        "find": "Starz Kids & Family - Eastern",
+        "replace": "Starz Kids & Family - Pacific"
       },
       {
         "find": "SRZK",

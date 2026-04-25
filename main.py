@@ -1,7 +1,7 @@
 import os
 
 from fastapi import FastAPI
-from fastapi.responses import Response
+from fastapi.responses import Response, RedirectResponse
 from Functions.create_offset_epg import create_combined_offset_epg_v2
 from Functions.cron_schedule import start_scheduler
 from Functions.config import get_epg_offset_config, get_epg_combine_config
@@ -21,14 +21,9 @@ print(f"BASE DIR:{base_dir}",
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/", include_in_schema=False)
 async def root():
-    return {"message": "Hello World"}
-
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+    return RedirectResponse(url="/docs")
 
 
 @app.get("/create_epg")
