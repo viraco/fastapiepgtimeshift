@@ -26,7 +26,7 @@ async def root():
     return RedirectResponse(url="/docs")
 
 
-@app.get("/create_epg")
+@app.get("/create_offset_epg")
 async def create_epg_async():
     create_combined_offset_epg_v2(epg_offset_config, data_dir)
     return {"message": "EPG created successfully"}
