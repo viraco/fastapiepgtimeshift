@@ -2,6 +2,7 @@ import os
 
 from dotenv import load_dotenv
 import json
+import tomllib
 
 
 class Config():
@@ -68,6 +69,12 @@ class Config():
         file_names.append("offset_epg.xml")
 
         return file_names
+
+    def get_toml_version(self):
+        # Read version from pyproject.toml
+        with open(os.path.join(self.base_dir, 'pyproject.toml'), 'rb') as f:
+            pyproject_data = tomllib.load(f)
+            return pyproject_data['project']['version']
 
     @property
     def epg_offset_config(self):

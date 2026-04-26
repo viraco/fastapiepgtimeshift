@@ -27,23 +27,24 @@ data_dir = _default_config.data_dir
 _default_config.load_env_config()
 _default_config.refresh_epg_configs()
 
-logger.info(f"BASE DIR:{base_dir}{"\n"}{" "*10}CONFIG DIR:{config_dir}{"\n"}{" "*10}DATA DIR:{data_dir}")
+logger.info(f"BASE DIR:{base_dir}{"\n"}{" " * 10}CONFIG DIR:{config_dir}{"\n"}{" " * 10}DATA DIR:{data_dir}")
 
 app = FastAPI()
+app.version = _default_config.get_toml_version()
 
 
-@app.get("/", include_in_schema=False,summary="Redirect to Swagger UI")
+@app.get("/", include_in_schema=False, summary="Redirect to Swagger UI")
 async def root():
     return RedirectResponse(url="/docs")
 
 
-@app.get("/create_offset_epg",summary="Create offset_epg.xml")
+@app.get("/create_offset_epg", summary="Create offset_epg.xml")
 async def create_epg_async():
     create_combined_offset_epg_v2(_default_config._load_epg_offset_config(), data_dir)
     return {"message": "EPG created successfully"}
 
 
-@app.get("/create_combined_epg",summary="Create combined_epg.xml")
+@app.get("/create_combined_epg", summary="Create combined_epg.xml")
 async def create_combined_epg_async():
     create_combined_epg(_default_config._load_epg_combine_config(), data_dir)
     return {"message": "Combined EPG created successfully"}
@@ -67,7 +68,7 @@ async def download_epg_file_async(file_name: str):
     })
 
 
-@app.get("/refresh_config_files",summary="Reload offset_config and combine_epg json config files")
+@app.get("/refresh_config_files", summary="Reload offset_config and combine_epg json config files")
 async def refresh_config_files_async():
     _default_config.refresh_epg_configs()
     return {"message": "Config files refreshed successfully"}
