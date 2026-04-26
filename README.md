@@ -2,6 +2,8 @@
 
 A FastAPI application designed to download, process, and combine XMLTV EPG (Electronic Program Guide) files. It allows for time-shifting specific channels (e.g., creating a Pacific feed from an Eastern feed) and merging multiple EPG sources into a single file.
 
+I created this application to help with the process of creating time-shifted epg guides for my [Dispatcharr](https://github.com/Dispatcharr/Dispatcharr) instance.
+
 ## Features
 
 - **Automated EPG Downloads**: Automatically downloads EPG files from configured URLs.
@@ -97,9 +99,9 @@ uv run uvicorn main:app --host 0.0.0.0 --port 8000
 ### Using docker-compose
 ```
 services:
-  fastapi-epg:
-    build: .
-    container_name: fastapi-epg
+  fastapi-epg-timeshift:
+    container_name: fastapi-epg-timeshift
+    image: ghcr.io/viraco/fastapiepgtimeshift:latest
     ports:
       - "8000:8000"
     volumes:
@@ -109,6 +111,7 @@ services:
       - Config/config.env
     restart: unless-stopped
 ```
+*i personally have the /app/Data volume pointing to dispatcharr epgs directory*
 
 ## Directory Structure
 - `Config/`: Configuration files (`.json`, `.env`).
