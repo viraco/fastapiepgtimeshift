@@ -2,9 +2,9 @@
   {
     "epg_file": "offset_epg.xml",
     "channels": [
-      {"channelid": "629.stations.xmltv.tvmedia.ca.offset180"},
-      { "channelid": "1377.stations.xmltv.tvmedia.ca.offset180" },
-      { "channelid": "665.stations.xmltv.tvmedia.ca.offset180" },
+      {
+        "channelid": "630.stations.xmltv.tvmedia.ca.offset180"
+      },
       {
         "channelid": "2272.stations.xmltv.tvmedia.ca.offset180",
         "update_displayname": [
@@ -13,9 +13,6 @@
             "replace": "444.2"
           }
         ]
-      },
-      {
-        "channelid": "630.stations.xmltv.tvmedia.ca.offset180"
       },
       {
         "channelid": "2271.stations.xmltv.tvmedia.ca.offset180",
@@ -146,14 +143,10 @@
   {
     "epg_file": "xmltv-10369.xml",
     "channels": [
-      { "channelid": "2128.stations.xmltv.tvmedia.ca" },
-      { "channelid": "665.stations.xmltv.tvmedia.ca" },
+      { "channelid": "1956.stations.xmltv.tvmedia.ca" },
       {
         "channelid": "3000.stations.xmltv.tvmedia.ca"
       },
-      { "channelid": "630.stations.xmltv.tvmedia.ca" },
-      { "channelid": "6215.stations.xmltv.tvmedia.ca" },
-      { "channelid": "1956.stations.xmltv.tvmedia.ca" },
       {
         "channelid": "1370.stations.xmltv.tvmedia.ca"
       },
@@ -562,19 +555,6 @@
     "epg_file": "xmltv-10382.xml",
     "channels": [
       {
-        "channelid": "7610.stations.xmltv.tvmedia.ca"
-      },
-      {
-        "channelid": "11485.stations.xmltv.tvmedia.ca"
-      },
-      {
-        "channelid": "11486.stations.xmltv.tvmedia.ca"
-      },
-      {
-        "channelid": "11487.stations.xmltv.tvmedia.ca"
-      },
-      { "channelid": "2680.stations.xmltv.tvmedia.ca" },
-      {
         "channelid": "13501.stations.xmltv.tvmedia.ca"
       },
       {
@@ -654,6 +634,12 @@
     "epg_file": "xmltv-9667.xml",
     "channels": [
       {
+        "channelid": "665.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "6215.stations.xmltv.tvmedia.ca"
+      },
+      {
         "channelid": "2593.stations.xmltv.tvmedia.ca"
       },
       {
@@ -673,8 +659,25 @@
       },
       {
         "channelid": "10734.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2680.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "2128.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "7609.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "11485.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "11616.stations.xmltv.tvmedia.ca"
+      },
+      {
+        "channelid": "11487.stations.xmltv.tvmedia.ca"
       }
     ]
   }
 ]
-
