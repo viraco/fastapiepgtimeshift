@@ -79,7 +79,7 @@ FILE_NAME1=epg_ripper_US_LOCALS1.xml
 DOWNLOAD_URL2=https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz
 FILE_NAME2=epg_ripper_US2.xml
 ```
-*config.env file used for urls instead of config as urls might contain credentials*\
+*config.env file used for urls instead of json as urls might contain credentials*\
 *cron schedule set in env file to require restart of docker image*
 
 ## Running the Application
