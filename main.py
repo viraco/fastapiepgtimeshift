@@ -25,7 +25,7 @@ data_dir = _default_config.data_dir
 _default_config.load_env_config()
 _default_config.refresh_epg_configs()
 
-logger.info(f"BASE DIR:{base_dir}\nCONFIG DIR:{config_dir}\nDATA DIR:{data_dir}")
+logger.info(f"BASE DIR:{base_dir}\n.{" "*10}CONFIG DIR:{config_dir}\n{" "*10}DATA DIR:{data_dir}")
 
 app = FastAPI()
 
