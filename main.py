@@ -10,6 +10,7 @@ from Functions.config import Config
 from Functions.download_epg import download_epg_files
 from Functions.create_combined_epg import create_combined_epg
 from Functions.logging_config import setup_logging
+from anyio import open_file, run
 
 setup_logging()
 logger = logging.getLogger(__name__)
@@ -48,14 +49,14 @@ async def create_combined_epg_async():
 
 
 @app.get("/{file_name:str}")
-async def download_epg_offset_async(file_name: str):
+async def download_epg_file_async(file_name: str):
     if file_name not in _default_config.get_epg_file_names():
         raise HTTPException(status_code=400, detail=f"Invalid EPG file name: {file_name}")
     epg_file_path = os.path.join(data_dir, file_name)
     if not os.path.exists(epg_file_path):
         raise HTTPException(status_code=404, detail=f"EPG file not found: {file_name}")
-    with open(epg_file_path, 'rb') as f:
-        content = f.read()
+    async with await open_file(epg_file_path, 'rb') as f:
+        content = await f.read()
     return Response(content=content, media_type='application/xml')
 
 

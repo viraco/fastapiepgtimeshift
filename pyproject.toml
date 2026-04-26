@@ -3,6 +3,7 @@ name = "fastapiepgtimeshift"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
+    "anyio>=4.13.0",
     "apscheduler>=3.11.2",
     "black>=26.3.1",
     "dotenv>=0.9.9",
