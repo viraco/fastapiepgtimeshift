@@ -110,5 +110,21 @@
       }
     ],
     "epg_file": "xmltv-10369.xml"
+  },
+  {
+    "channelid": "655.stations.xmltv.tvmedia.ca",
+    "offset_minutes": "180",
+    "new_channelid": "655.stations.xmltv.tvmedia.ca.offset180",
+    "update_displayname": [
+      {
+        "find": "Paramount+ with Showtime - Eastern Feed",
+        "replace": "Paramount+ with Showtime - Pacific Feed"
+      },
+      {
+        "find": "SHO",
+        "replace": "SHOP"
+      }
+    ],
+    "epg_file": "xmltv-10369.xml"
   }
 ]

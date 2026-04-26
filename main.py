@@ -1,22 +1,36 @@
 import os
+import logging
 
 from fastapi import FastAPI
 from fastapi.responses import Response, RedirectResponse
 from Functions.create_offset_epg import create_combined_offset_epg_v2
 from Functions.cron_schedule import start_scheduler
-from Functions.config import get_epg_offset_config, get_epg_combine_config
+from Functions.config import Config
 from Functions.download_epg import download_epg_files
 from Functions.create_combined_epg import create_combined_epg
+from Functions.logging_config import setup_logging
 
-base_dir = os.path.dirname(__file__)
-config_dir = os.path.join(base_dir, 'Config')
-data_dir = os.path.join(base_dir, 'Data')
-epg_offset_config = get_epg_offset_config(config_dir)
-epg_combine_config = get_epg_combine_config(config_dir)
+setup_logging()
+logger = logging.getLogger(__name__)
 
-print(f"BASE DIR:{base_dir}",
-      f"CONFIG DIR:{config_dir}",
-      f"DATA DIR:{data_dir}", sep="\n\r")
+_default_config = Config()
+_default_config.base_dir = os.path.dirname(__file__)
+_default_config.config_dir = os.path.join(os.path.dirname(__file__), 'Config')
+_default_config.data_dir = os.path.join(os.path.dirname(__file__), 'Data')
+base_dir = _default_config.base_dir
+config_dir = _default_config.config_dir
+data_dir = _default_config.data_dir
+
+_default_config.load_env_config()
+_default_config.refresh_epg_configs()
+
+#base_dir = os.path.dirname(__file__)
+#config_dir = os.path.join(base_dir, 'Config')
+#data_dir = os.path.join(base_dir, 'Data')
+#epg_offset_config = get_epg_offset_config(config_dir)
+#epg_combine_config = get_epg_combine_config(config_dir)
+
+logger.info(f"BASE DIR:{base_dir}\nCONFIG DIR:{config_dir}\nDATA DIR:{data_dir}")
 
 app = FastAPI()
 
@@ -28,13 +42,13 @@ async def root():
 
 @app.get("/create_offset_epg")
 async def create_epg_async():
-    create_combined_offset_epg_v2(epg_offset_config, data_dir)
+    create_combined_offset_epg_v2(_default_config._load_epg_offset_config(), data_dir)
     return {"message": "EPG created successfully"}
 
 
 @app.get("/create_combined_epg")
 async def create_combined_epg_async():
-    create_combined_epg(epg_combine_config, data_dir)
+    create_combined_epg(_default_config._load_epg_combine_config(), data_dir)
     return {"message": "Combined EPG created successfully"}
 
 
@@ -61,8 +75,8 @@ async def download_combined_epg_async():
 @app.get("/combined_epg.xml")
 def download_epg_files_cron():
     download_epg_files(data_dir)
-    create_combined_offset_epg_v2(epg_offset_config, data_dir)
-    create_combined_epg(epg_combine_config, data_dir)
+    create_combined_offset_epg_v2(_default_config._load_epg_offset_config(), data_dir)
+    create_combined_epg(_default_config._load_epg_combine_config(), data_dir)
 
 
 scheduler = start_scheduler(download_epg_files_cron)

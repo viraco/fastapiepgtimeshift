@@ -2,7 +2,10 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 import copy
 import os
-from Functions.config import get_epg_offset_config
+import logging
+from Functions.config import Config
+
+logger = logging.getLogger(__name__)
 
 
 def parse_xmltv_datetime(dt_str):
@@ -49,7 +52,7 @@ def create_combined_offset_epg_v2(epg_offset_config, data_dir=None):
     root_attrs_set = False
 
     for epg_file, configs in file_to_configs.items():
-        print(f"Processing EPG file: {epg_file}")
+        logger.info(f"Processing EPG file: {epg_file}")
         tree = ET.parse(epg_file, ET.XMLParser(encoding='utf-8'))
         root = tree.getroot()
 
@@ -101,10 +104,21 @@ def create_combined_offset_epg_v2(epg_offset_config, data_dir=None):
         f.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
         new_tree.write(f, encoding='utf-8', xml_declaration=False)
 
-    print(f"Offset EPG written to: {output_file}")
-    print(f"Channels: {len(channel_elements)}, Programmes: {len(programme_elements)}")
+    logger.info(f"Offset EPG written to: {output_file}")
+    logger.info(f"Channels: {len(channel_elements)}, Programmes: {len(programme_elements)}")
 
 
 if __name__ == "__main__":
-    epg_offset_config = get_epg_offset_config(base_dir=None)
-    create_combined_offset_epg_v2(epg_offset_config, data_dir=None)
+    from Functions.logging_config import setup_logging
+    setup_logging()
+    _default_config = Config()
+    _default_config.base_dir = os.path.dirname(__file__)
+    _default_config.config_dir = os.path.join(os.path.dirname(__file__), 'Config')
+    _default_config.data_dir = os.path.join(os.path.dirname(__file__), 'Data')
+    base_dir = _default_config.base_dir
+    config_dir = _default_config.config_dir
+    data_dir = _default_config.data_dir
+
+    _default_config.load_env_config()
+    _default_config.refresh_epg_configs()
+    create_combined_offset_epg_v2(_default_config._load_epg_offset_config(), data_dir=None)
