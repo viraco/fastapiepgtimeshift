@@ -67,13 +67,6 @@ async def download_combined_epg_async():
     return Response(content=content, media_type='application/xml')
 
 
-@app.get("/combined_epg.xml")
-def download_epg_files_cron():
-    download_epg_files(data_dir)
-    create_combined_offset_epg_v2(_default_config._load_epg_offset_config(), data_dir)
-    create_combined_epg(_default_config._load_epg_combine_config(), data_dir)
-
-
 @app.get("/refresh_config_files")
 async def refresh_config_files_async():
     _default_config.refresh_epg_configs()
@@ -112,6 +105,12 @@ async def upload_combine_config_async(file: UploadFile = File(...)):
         f.write(content)
     _default_config.refresh_epg_combine_config()
     return {"message": "combine_epg.json uploaded and replaced successfully"}
+
+
+def download_epg_files_cron():
+    download_epg_files(data_dir)
+    create_combined_offset_epg_v2(_default_config._load_epg_offset_config(), data_dir)
+    create_combined_epg(_default_config._load_epg_combine_config(), data_dir)
 
 
 scheduler = start_scheduler(download_epg_files_cron)
