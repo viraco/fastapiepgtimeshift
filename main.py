@@ -10,7 +10,8 @@ from Functions.config import Config
 from Functions.download_epg import download_epg_files
 from Functions.create_combined_epg import create_combined_epg
 from Functions.logging_config import setup_logging
-from anyio import open_file, run
+from anyio import open_file
+import gzip
 
 setup_logging()
 logger = logging.getLogger(__name__)
@@ -57,7 +58,13 @@ async def download_epg_file_async(file_name: str):
         raise HTTPException(status_code=404, detail=f"EPG file not found: {file_name}")
     async with await open_file(epg_file_path, 'rb') as f:
         content = await f.read()
-    return Response(content=content, media_type='application/xml')
+
+    # Compress the XML content as gzip
+    compressed_content = gzip.compress(content)
+
+    return Response(content=compressed_content, media_type='application/gzip', headers={
+        'Content-Disposition': f'attachment; filename="{file_name}.gz"'
+    })
 
 
 @app.get("/refresh_config_files")
