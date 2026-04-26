@@ -34,7 +34,7 @@ The application uses two main configuration files in the `Config/` directory:
 
 ### `offset_config.json`
 Defines which channels to shift and by how much.\
-*find and replace are optional, and are case-insensitive and match on whole string*
+*find and replace are optional, and are case-sensitive and match on whole string*
 ```json
 [
   {
