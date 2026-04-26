@@ -34,4 +34,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64  # Build for both architectures
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ github.ref_name}}-${{env.TIMESTAMP}}
+            ghcr.io/${{ github.repository }}:latest
+

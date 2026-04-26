@@ -40,12 +40,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64  # Build for both architectures
           push: true
-          tags: ghcr.io/${{ github.repository }}:${{ github.ref_name}}-${{env.TIMESTAMP}}
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ github.ref_name}}-${{env.TIMESTAMP}}
+            ghcr.io/${{ github.repository }}:dev
 
-      - name: Build and push 2
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          platforms: linux/amd64,linux/arm64  # Build for both architectures
-          push: true
-          tags: ghcr.io/${{ github.repository }}:latest
