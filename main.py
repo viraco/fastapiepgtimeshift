@@ -24,12 +24,6 @@ data_dir = _default_config.data_dir
 _default_config.load_env_config()
 _default_config.refresh_epg_configs()
 
-#base_dir = os.path.dirname(__file__)
-#config_dir = os.path.join(base_dir, 'Config')
-#data_dir = os.path.join(base_dir, 'Data')
-#epg_offset_config = get_epg_offset_config(config_dir)
-#epg_combine_config = get_epg_combine_config(config_dir)
-
 logger.info(f"BASE DIR:{base_dir}\nCONFIG DIR:{config_dir}\nDATA DIR:{data_dir}")
 
 app = FastAPI()

@@ -55,30 +55,3 @@ class Config():
     def epg_combine_config(self):
         """Get EPG combine configuration"""
         return self._epg_combine_config
-
-
-#def load_config():
-#    """Load configuration from config.env file (backward compatibility)"""
-#    Config.load_env_config()
-
-
-#def get_epg_offset_config(base_dir=None):
-#    """Get EPG offset configuration (backward compatibility)"""
-#    if base_dir is None:
-#        base_dir = os.path.join(os.path.dirname(__file__), '..', 'Config')
-#    file_name = 'offset_config.json'
-#    config_file = os.path.join(base_dir, file_name)
-#    with open(config_file, 'r') as f:
-#        epg_offset_config = json.load(f)
-#    return epg_offset_config
-
-
-#def get_epg_combine_config(base_dir=None):
-#    """Get EPG combine configuration (backward compatibility)"""
-#    file_name = 'combine_epg.json'
-#    if base_dir is None:
-#        base_dir = os.path.join(os.path.dirname(__file__), '..', 'Config')
-#    config_file = os.path.join(base_dir, file_name)
-#    with open(config_file, 'r') as f:
-#        epg_combine_config = json.load(f)
-#    return epg_combine_config
