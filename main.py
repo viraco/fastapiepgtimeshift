@@ -32,24 +32,24 @@ logger.info(f"BASE DIR:{base_dir}\n.{" "*10}CONFIG DIR:{config_dir}\n{" "*10}DAT
 app = FastAPI()
 
 
-@app.get("/", include_in_schema=False)
+@app.get("/", include_in_schema=False,summary="Redirect to Swagger UI")
 async def root():
     return RedirectResponse(url="/docs")
 
 
-@app.get("/create_offset_epg")
+@app.get("/create_offset_epg",summary="Create offset_epg.xml")
 async def create_epg_async():
     create_combined_offset_epg_v2(_default_config._load_epg_offset_config(), data_dir)
     return {"message": "EPG created successfully"}
 
 
-@app.get("/create_combined_epg")
+@app.get("/create_combined_epg",summary="Create combined_epg.xml")
 async def create_combined_epg_async():
     create_combined_epg(_default_config._load_epg_combine_config(), data_dir)
     return {"message": "Combined EPG created successfully"}
 
 
-@app.get("/{file_name:str}")
+@app.get("/{file_name:str}", summary="Download EPG file in gzip format", response_class=Response)
 async def download_epg_file_async(file_name: str):
     if file_name not in _default_config.get_epg_file_names():
         raise HTTPException(status_code=400, detail=f"Invalid EPG file name: {file_name}")
@@ -67,13 +67,13 @@ async def download_epg_file_async(file_name: str):
     })
 
 
-@app.get("/refresh_config_files")
+@app.get("/refresh_config_files",summary="Reload offset_config and combine_epg json config files")
 async def refresh_config_files_async():
     _default_config.refresh_epg_configs()
     return {"message": "Config files refreshed successfully"}
 
 
-@app.post("/upload_offset_config")
+@app.post("/upload_offset_config", summary="Upload offset_config.json file")
 async def upload_offset_config_async(file: UploadFile = File(...)):
     content = await file.read()
 
@@ -90,7 +90,7 @@ async def upload_offset_config_async(file: UploadFile = File(...)):
     return {"message": "offset_config.json uploaded and replaced successfully"}
 
 
-@app.post("/upload_combine_config")
+@app.post("/upload_combine_config", summary="Upload combine_epg.json file")
 async def upload_combine_config_async(file: UploadFile = File(...)):
     content = await file.read()
 
