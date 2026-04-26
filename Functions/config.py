@@ -46,6 +46,14 @@ class Config():
         self._epg_offset_config = self._load_epg_offset_config()
         self._epg_combine_config = self._load_epg_combine_config()
 
+    def refresh_epg_offset_config(self):
+        """Refresh EPG offset configuration"""
+        self._epg_offset_config = self._load_epg_offset_config()
+
+    def refresh_epg_combine_config(self):
+        """Refresh EPG combine configuration"""
+        self._epg_combine_config = self._load_epg_combine_config()
+
     @property
     def epg_offset_config(self):
         """Get EPG offset configuration"""

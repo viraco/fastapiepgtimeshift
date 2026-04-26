@@ -1,7 +1,8 @@
 import os
 import logging
+import json
 
-from fastapi import FastAPI
+from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import Response, RedirectResponse
 from Functions.create_offset_epg import create_combined_offset_epg_v2
 from Functions.cron_schedule import start_scheduler
@@ -71,6 +72,46 @@ def download_epg_files_cron():
     download_epg_files(data_dir)
     create_combined_offset_epg_v2(_default_config._load_epg_offset_config(), data_dir)
     create_combined_epg(_default_config._load_epg_combine_config(), data_dir)
+
+
+@app.get("/refresh_config_files")
+async def refresh_config_files_async():
+    _default_config.refresh_epg_configs()
+    return {"message": "Config files refreshed successfully"}
+
+
+@app.post("/upload_offset_config")
+async def upload_offset_config_async(file: UploadFile = File(...)):
+    content = await file.read()
+
+    # Validate JSON
+    try:
+        json.loads(content)
+    except json.JSONDecodeError as e:
+        raise HTTPException(status_code=422, detail=f"Invalid JSON file: {str(e)}")
+
+    config_file_path = os.path.join(config_dir, 'offset_config.json')
+    with open(config_file_path, 'wb') as f:
+        f.write(content)
+    _default_config.refresh_epg_offset_config()
+    return {"message": "offset_config.json uploaded and replaced successfully"}
+
+
+@app.post("/upload_combine_config")
+async def upload_combine_config_async(file: UploadFile = File(...)):
+    content = await file.read()
+
+    # Validate JSON
+    try:
+        json.loads(content)
+    except json.JSONDecodeError as e:
+        raise HTTPException(status_code=422, detail=f"Invalid JSON file: {str(e)}")
+
+    config_file_path = os.path.join(config_dir, 'combine_epg.json')
+    with open(config_file_path, 'wb') as f:
+        f.write(content)
+    _default_config.refresh_epg_combine_config()
+    return {"message": "combine_epg.json uploaded and replaced successfully"}
 
 
 scheduler = start_scheduler(download_epg_files_cron)

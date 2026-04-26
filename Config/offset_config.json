@@ -29,7 +29,7 @@
         "replace": "HBOMOVP"
       }
     ],
-    "epg_file": "xmltv-9667.xml"
+    "epg_file": "xmltv-10369.xml"
   },
   {
     "channelid": "2272.stations.xmltv.tvmedia.ca",
@@ -111,10 +111,18 @@
     ],
     "epg_file": "xmltv-10369.xml"
   },
-  {
-    "channelid": "655.stations.xmltv.tvmedia.ca",
+  { "channelid":"1377.stations.xmltv.tvmedia.ca",
     "offset_minutes": "180",
-    "new_channelid": "655.stations.xmltv.tvmedia.ca.offset180",
+    "new_channelid": "1377.stations.xmltv.tvmedia.ca.offset180",
+    "update_displayname": [
+      { "find": "Cinemax Action - Eastern", "replace": "Cinemax Action - Pacific"}, { "find": "MAXACT", "replace": "MAXACTP"}
+    ],
+    "epg_file": "xmltv-10369.xml"
+  },
+  {
+    "channelid": "665.stations.xmltv.tvmedia.ca",
+    "offset_minutes": "180",
+    "new_channelid": "665.stations.xmltv.tvmedia.ca.offset180",
     "update_displayname": [
       {
         "find": "Paramount+ with Showtime - Eastern Feed",
@@ -126,5 +134,13 @@
       }
     ],
     "epg_file": "xmltv-10369.xml"
+  },
+  { "channelid": "629.stations.xmltv.tvmedia.ca",
+    "offset_minutes": "180",
+    "new_channelid": "629.stations.xmltv.tvmedia.ca.offset180",
+    "update_displayname": [
+      {"find":"HBO Comedy - East", "replace":"HBO Comedy - Pacfic"},{"find":"HBOC", "replace":"HBOCP"}
+    ],
+    "epg_file":"xmltv-10369.xml"
   }
 ]
