@@ -24,8 +24,8 @@ I created this application to help with the process of creating time-shifted epg
 
 ### Configuration Management
 - `GET /refresh_config_files`: Reload the JSON configuration files from disk.
-- `POST /upload_offset_config`: Upload and replace the `offset_config.json` file.
-- `POST /upload_combine_config`: Upload and replace the `combine_epg.json` file.
+- `POST /upload_offset_config`: Upload and replace the `offset_config.json` file. A refresh of the config data occurs automatically.
+- `POST /upload_combine_config`: Upload and replace the `combine_epg.json` file. A refresh of the config data occurs automatically.
 
 ### Documentation
 - `GET /`: Redirects to the Swagger UI (`/docs`) for interactive API exploration.
