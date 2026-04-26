@@ -32,7 +32,13 @@ def apply_displayname_updates(element, update_displayname_rules):
     for display_name in element.findall('display-name'):
         if display_name.text:
             for rule in update_displayname_rules:
-                display_name.text = display_name.text.replace(rule['find'], rule['replace'])
+                if rule.get('remove', False) and rule['find'] in display_name.text:
+                    element.remove(display_name)
+                    break
+                else:
+                    display_name.text = display_name.text.replace(rule['find'], rule['replace'])
+            #for rule in update_displayname_rules:
+            #    display_name.text = display_name.text.replace(rule['find'], rule['replace'])
 
 
 def create_combined_epg(epg_combine_config, data_dir=None):
