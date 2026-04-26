@@ -94,6 +94,22 @@ uv sync
 uv run uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
+### Using docker-compose
+```
+services:
+  fastapi-epg:
+    build: .
+    container_name: fastapi-epg
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./Config:/app/Config
+      - ./Data:/app/Data
+    env_file:
+      - Config/config.env
+    restart: unless-stopped
+```
+
 ## Directory Structure
 - `Config/`: Configuration files (`.json`, `.env`).
 - `Data/`: Downloaded and processed EPG files.
