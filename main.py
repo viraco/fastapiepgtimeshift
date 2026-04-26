@@ -47,21 +47,13 @@ async def create_combined_epg_async():
     return {"message": "Combined EPG created successfully"}
 
 
-@app.get("/offset_epg.xml")
-async def download_epg_offset_async():
-    epg_file_path = os.path.join(data_dir, 'offset_epg.xml')
+@app.get("/{file_name:str}")
+async def download_epg_offset_async(file_name: str):
+    if file_name not in _default_config.get_epg_file_names():
+        raise HTTPException(status_code=400, detail=f"Invalid EPG file name: {file_name}")
+    epg_file_path = os.path.join(data_dir, file_name)
     if not os.path.exists(epg_file_path):
-        return {"error": "EPG file not found"}
-    with open(epg_file_path, 'rb') as f:
-        content = f.read()
-    return Response(content=content, media_type='application/xml')
-
-
-@app.get("/combined_epg.xml")
-async def download_combined_epg_async():
-    epg_file_path = os.path.join(data_dir, 'combined_epg.xml')
-    if not os.path.exists(epg_file_path):
-        return {"error": "Combined EPG file not found"}
+        raise HTTPException(status_code=404, detail=f"EPG file not found: {file_name}")
     with open(epg_file_path, 'rb') as f:
         content = f.read()
     return Response(content=content, media_type='application/xml')

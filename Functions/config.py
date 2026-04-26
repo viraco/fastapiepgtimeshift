@@ -54,6 +54,21 @@ class Config():
         """Refresh EPG combine configuration"""
         self._epg_combine_config = self._load_epg_combine_config()
 
+    def get_epg_file_names(self):
+        """Get list of all FILE_NAME# values from config.env"""
+        epg_download_count = int(os.getenv('EPG_DOWNLOAD_COUNT', '0'))
+        file_names = []
+
+        for i in range(1, epg_download_count + 1):
+            file_name = os.getenv(f'FILE_NAME{i}')
+            if file_name:
+                file_names.append(file_name)
+
+        file_names.append("combined_epg.xml")
+        file_names.append("offset_epg.xml")
+
+        return file_names
+
     @property
     def epg_offset_config(self):
         """Get EPG offset configuration"""
