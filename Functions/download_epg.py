@@ -47,7 +47,6 @@ def download_file(url, file_path):
 
 def download_epg_files(base_dir=None):
     """Download all EPG files based on config.env configuration"""
-    Config.load_env_config()
 
     epg_download_count = int(os.getenv('EPG_DOWNLOAD_COUNT', '0'))
 

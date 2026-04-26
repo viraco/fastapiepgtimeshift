@@ -33,7 +33,8 @@ A FastAPI application designed to download, process, and combine XMLTV EPG (Elec
 The application uses two main configuration files in the `Config/` directory:
 
 ### `offset_config.json`
-Defines which channels to shift and by how much.
+Defines which channels to shift and by how much.\
+*find and replace are optional, and are case-insensitive and match on whole string*
 ```json
 [
   {

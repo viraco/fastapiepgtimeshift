@@ -1,150 +1,26 @@
 [
   {
-    "channelid": "2271.stations.xmltv.tvmedia.ca",
+    "channelid": "HBO.Drama.us2",
     "offset_minutes": "180",
-    "new_channelid": "2271.stations.xmltv.tvmedia.ca.offset180",
+    "new_channelid": "HBO.Drama.us2.offset180",
     "update_displayname": [
       {
-        "find": "Showtime Showcase - Eastern",
-        "replace": "Showtime Showcase - Pacific"
-      },
-      {
-        "find": "SHO3",
-        "replace": "SHO3P"
-      },
-      {
-        "find": "323",
-        "remove": true
+        "find": "HBO Drama",
+        "replace": "HBO Drama - West"
       }
     ],
-    "epg_file": "xmltv-10382.xml"
+    "epg_file": "epg_ripper_US2.xml"
   },
   {
-    "channelid": "630.stations.xmltv.tvmedia.ca",
+    "channelid": "HBO.Comedy.HD.us2",
     "offset_minutes": "180",
-    "new_channelid": "630.stations.xmltv.tvmedia.ca.offset180",
+    "new_channelid": "HBO.Comedy.HD.us2.offset180",
     "update_displayname": [
       {
-        "find": "HBO Movies - East",
-        "replace": "HBO Movies - Pacific"
-      },
-      {
-        "find": "HBOMOV",
-        "replace": "HBOMOVP"
+        "find": "HBO Comedy HD",
+        "replace": "HBO Comedy HD - West"
       }
     ],
-    "epg_file": "xmltv-10369.xml"
-  },
-  {
-    "channelid": "2272.stations.xmltv.tvmedia.ca",
-    "offset_minutes": "180",
-    "new_channelid": "2272.stations.xmltv.tvmedia.ca.offset180",
-    "update_displayname": [
-      {
-        "find": "Showtime Next - Eastern",
-        "replace": "Showtime Next - Pacific"
-      },
-      {
-        "find": "NEXT",
-        "replace": "NEXTP"
-      }
-    ],
-    "epg_file": "xmltv-10369.xml"
-  },
-  {
-    "channelid": "1956.stations.xmltv.tvmedia.ca",
-    "offset_minutes": "180",
-    "new_channelid": "1956.stations.xmltv.tvmedia.ca.offset180",
-    "update_displayname": [
-      {
-        "find": "Showtime Family Zone - Eastern",
-        "replace": "Showtime Family Zone - Pacific"
-      },
-      {
-        "find": "SHOFZ",
-        "replace": "SHOFZP"
-      }
-    ],
-    "epg_file": "xmltv-10369.xml"
-  },
-  {
-    "channelid": "2273.stations.xmltv.tvmedia.ca",
-    "offset_minutes": "180",
-    "new_channelid": "2273.stations.xmltv.tvmedia.ca.offset180",
-    "update_displayname": [
-      {
-        "find": "Showtime Women - Eastern",
-        "replace": "Showtime Women - Pacific"
-      },
-      {
-        "find": "SHO-WE",
-        "replace": "SHO-WEP"
-      }
-    ],
-    "epg_file": "xmltv-10369.xml"
-  },
-  {
-    "channelid": "4223.stations.xmltv.tvmedia.ca",
-    "offset_minutes": "180",
-    "new_channelid": "4223.stations.xmltv.tvmedia.ca.offset180",
-    "update_displayname": [
-      {
-        "find": "Starz Comedy - Eastern",
-        "replace": "Starz Comedy - Pacific"
-      },
-      {
-        "find": "SRZC",
-        "replace": "SRZCP"
-      }
-    ],
-    "epg_file": "xmltv-10369.xml"
-  },
-  {
-    "channelid": "1194.stations.xmltv.tvmedia.ca",
-    "offset_minutes": "180",
-    "new_channelid": "1194.stations.xmltv.tvmedia.ca.offset180",
-    "update_displayname": [
-      {
-        "find": "Starz Kids & Family - Eastern",
-        "replace": "Starz Kids & Family - Pacific"
-      },
-      {
-        "find": "SRZK",
-        "replace": "SRZKP"
-      }
-    ],
-    "epg_file": "xmltv-10369.xml"
-  },
-  { "channelid":"1377.stations.xmltv.tvmedia.ca",
-    "offset_minutes": "180",
-    "new_channelid": "1377.stations.xmltv.tvmedia.ca.offset180",
-    "update_displayname": [
-      { "find": "Cinemax Action - Eastern", "replace": "Cinemax Action - Pacific"}, { "find": "MAXACT", "replace": "MAXACTP"}
-    ],
-    "epg_file": "xmltv-10369.xml"
-  },
-  {
-    "channelid": "665.stations.xmltv.tvmedia.ca",
-    "offset_minutes": "180",
-    "new_channelid": "665.stations.xmltv.tvmedia.ca.offset180",
-    "update_displayname": [
-      {
-        "find": "Paramount+ with Showtime - Eastern Feed",
-        "replace": "Paramount+ with Showtime - Pacific Feed"
-      },
-      {
-        "find": "SHO",
-        "replace": "SHOP"
-      }
-    ],
-    "epg_file": "xmltv-10369.xml"
-  },
-  { "channelid": "629.stations.xmltv.tvmedia.ca",
-    "offset_minutes": "180",
-    "new_channelid": "629.stations.xmltv.tvmedia.ca.offset180",
-    "update_displayname": [
-      {"find":"HBO Comedy - East", "replace":"HBO Comedy - Pacfic"},{"find":"HBOC", "replace":"HBOCP"}
-    ],
-    "epg_file":"xmltv-10369.xml"
+    "epg_file": "epg_ripper_US2.xml"
   }
 ]
