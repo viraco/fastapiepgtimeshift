@@ -28,9 +28,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set timestamps big indian format
+      - name: Set Big-Endian Timestamp
         id: timestamp
-        run: export GITHUB_TIME=$(date +'%Y%m%d%H%M%S')
+        run: echo "TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+      - name: Use Timestamp
+        run: echo "The timestamp is ${{ env.TIMESTAMP }}"
 
       - name: Build and push
         uses: docker/build-push-action@v6
@@ -38,4 +40,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64  # Build for both architectures
           push: true
-          tags: ghcr.io/${{ github.repository }}:${{ github.ref_name}}-${{env.GITHUB_TIME}}
+          tags: ghcr.io/${{ github.repository }}:${{ github.ref_name}}-${{env.TIMESTAMP}}
