@@ -31,10 +31,10 @@ def apply_displayname_updates(element, update_displayname_rules):
     for display_name in element.findall('display-name'):
         if display_name.text:
             for rule in update_displayname_rules:
-                if rule.get('remove', False) and rule['find'] in display_name.text:
+                if rule.get('remove', False) == True and rule.get('find', '') and rule['find'] in display_name.text:
                     element.remove(display_name)
                     break
-                else:
+                elif rule.get('replace', None) is not None and rule.get('find', None) is not None and rule['find'] in display_name.text:
                     display_name.text = display_name.text.replace(rule['find'], rule['replace'])
 
 

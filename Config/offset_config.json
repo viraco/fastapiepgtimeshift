@@ -11,6 +11,10 @@
       {
         "find": "SHO3",
         "replace": "SHO3P"
+      },
+      {
+        "find": "323",
+        "remove": true
       }
     ],
     "epg_file": "xmltv-10382.xml"
