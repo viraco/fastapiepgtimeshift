@@ -107,8 +107,6 @@ services:
     volumes:
       - ./Config:/app/Config
       - ./Data:/app/Data
-    env_file:
-      - Config/config.env
     restart: unless-stopped
 ```
 *i personally have the /app/Data volume pointing to dispatcharr epgs directory*
