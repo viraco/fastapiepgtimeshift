@@ -66,6 +66,7 @@ If `merge_channels` is set to true, all channels from the specified files will b
   {
     "epg_file": "source_file2.xml",
     "merge_channels": true
+  }  
 ]
 ```
 
