@@ -53,6 +53,7 @@ Defines which channels to shift and by how much.\
 
 ### `combine_epg.json`
 Defines which channels from which files should be included in the master `combined_epg.xml`.
+If `merge_channels` is set to true, all channels from the specified files will be merged the combined EPG.
 ```json
 [
   {
@@ -61,7 +62,10 @@ Defines which channels from which files should be included in the master `combin
       { "channelid": "channel.one" },
       { "channelid": "channel.two" }
     ]
-  }
+  },
+  {
+    "epg_file": "source_file2.xml",
+    "merge_channels": true
 ]
 ```
 
