@@ -23,13 +23,6 @@
   },
   {
     "epg_file": "epg_ripper_US_LOCALS1.xml",
-    "channels": [
-      {
-        "channelid": "WXIX-DT.us_locals1"
-      },
-      {
-        "channelid": "WCPO-DT.us_locals1"
-      }
-    ]
+    "merge_channels": true
   }
 ]

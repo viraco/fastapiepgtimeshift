@@ -65,23 +65,28 @@ def create_combined_epg(epg_combine_config, data_dir=None):
             root_attrs_set = True
 
         config_map = {}
+        merge_all = False
         for cfg in configs:
+            if cfg.get('merge_channels')==True:
+                merge_all = True
+                break
             for ch_cfg in cfg.get('channels', []):
                 config_map[ch_cfg['channelid']] = {'parent_cfg': cfg, 'channel_cfg': ch_cfg}
 
         for channel in root.findall('channel'):
             ch_id = channel.get('id')
-            if ch_id in config_map:
-                ch_cfg = config_map[ch_id]['channel_cfg']
+            if merge_all or ch_id in config_map:
                 new_channel = copy.deepcopy(channel)
-                rules = ch_cfg.get('update_displayname', [])
-                if rules:
-                    apply_displayname_updates(new_channel, rules)
+                if ch_id in config_map:
+                    ch_cfg = config_map[ch_id]['channel_cfg']
+                    rules = ch_cfg.get('update_displayname', [])
+                    if rules:
+                        apply_displayname_updates(new_channel, rules)
                 channel_elements.append(new_channel)
 
         for programme in root.findall('programme'):
             ch_id = programme.get('channel')
-            if ch_id in config_map:
+            if merge_all or ch_id in config_map:
                 new_prog = copy.deepcopy(programme)
                 programme_elements.append(new_prog)
 
