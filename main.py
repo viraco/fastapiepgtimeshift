@@ -54,7 +54,9 @@ async def create_combined_epg_async():
 async def download_epg_file_async(file_name: str):
     if file_name not in _default_config.get_epg_file_names():
         raise HTTPException(status_code=400, detail=f"Invalid EPG file name: {file_name}")
-    epg_file_path = os.path.join(data_dir, file_name)
+    epg_file_path = os.path.normpath(os.path.join(data_dir, file_name))
+    if not epg_file_path.fullname.startswith(data_dir):
+        raise HTTPException(status_code=400, detail=f"Invalid EPG file name: {file_name}")
     if not os.path.exists(epg_file_path):
         raise HTTPException(status_code=404, detail=f"EPG file not found: {file_name}")
     async with await open_file(epg_file_path, 'rb') as f:
