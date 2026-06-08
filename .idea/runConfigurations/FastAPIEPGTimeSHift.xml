@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="FastAPIEPGTimeSHift" type="Python.FastAPI">
     <option name="file" value="$PROJECT_DIR$/main.py" />
-    <module name="FastAPIEPGTimeSHift" />
+    <module name="fastapiepgtimeshift" />
     <option name="ENV_FILES" value="" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
