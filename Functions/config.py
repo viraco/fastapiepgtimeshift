@@ -25,7 +25,7 @@ class Config():
 
     def load_env_config(self):
         """Load configuration from config.env file"""
-        config_path = os.path.join(self.base_dir, '..', 'Config', 'config.env')
+        config_path = os.path.join(self.config_dir, 'config.env')
         load_dotenv(config_path, override=True)
 
     def _load_epg_offset_config(self):

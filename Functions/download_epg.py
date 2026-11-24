@@ -50,7 +50,7 @@ def download_epg_files(base_dir=None):
 
     epg_download_count = int(os.getenv('EPG_DOWNLOAD_COUNT', '0'))
 
-    if epg_download_count == 0:
+    if epg_download_count <= 0:
         logger.info("No EPG files to download (EPG_DOWNLOAD_COUNT is 0 or not set)")
         return
 
